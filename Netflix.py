@@ -1,19 +1,14 @@
 from seleniumwire import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
 import math
 import re
 import time
 import requests
-import pandas
 from bs4 import BeautifulSoup
 import json
 import re
-import itertools
-import pandas
 
 class Netflix(): 
     def __init__(self):
