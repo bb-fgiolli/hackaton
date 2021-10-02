@@ -2,6 +2,7 @@ from typing import Type
 import requests
 import time
 from bs4 import BeautifulSoup as bs
+from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -17,7 +18,9 @@ class StarPlus():
         self.scraping()
     def scraping(self):
         ###Primero iniciamos sesión y elegimos un usuario cualquiera###
-        self.driver = webdriver.Firefox()
+        options = Options()
+        options.add_argument("--headless")
+        self.driver = webdriver.Firefox(options=options)
         self.driver.get("https://www.starplus.com/es-419/login")
         self.driver.implicitly_wait(10)
         self.driver.find_element_by_xpath('//*[@id="email"]').send_keys("arturomontalvo1154@gmail.com")
@@ -50,7 +53,7 @@ class StarPlus():
                     continue
                 contenido_title = contenido.get_attribute("alt")
                 contenido_titles.append(str(n) + ". " + contenido_title)
-            cat_main["Type"] = 'Main'
+            cat_main["Type"] = 'Overall'
             cat_main["Top"] = contenido_titles[:10]
             cat_main["Plataforma"] = "StarPlus"
             self.cats.append(cat_main)

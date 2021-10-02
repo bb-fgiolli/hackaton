@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 from bs4 import BeautifulSoup
 import time
 import math
@@ -15,7 +16,9 @@ class Disney:
         self.passw = "KLM2012a"
     
     def scraping(self):
-        driver = webdriver.Firefox()
+        options = Options()
+        options.add_argument("--headless")
+        driver = webdriver.Firefox(options=options)
         driver.get(self.base_url)
         elem = driver.find_element_by_css_selector("a.btn-secondary:nth-child(1)").click()
         driver.implicitly_wait(100)
