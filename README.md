@@ -34,6 +34,5 @@ Es una api que por medio de peticiones en el servidor a la vpn express itere el 
 * [X]  NETFLIX
 * [ ]  HBO MAX
 * [ ]  VALIDAR SSH - VPN EXPRESS
-* [ ]  SCRAPING LATAM
-* [ ]  SCRAPING US
-* [ ]  SCRAPING GLOBAL
+* [ ]  SCRAPING LATAM, US , GLOBAL
+* [ ]  SUBIDAS Y BAJADAS de posicion.
