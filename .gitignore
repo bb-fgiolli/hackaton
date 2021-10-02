@@ -2,3 +2,4 @@ env
 geckodriver.*
 *.json
 *.pyc
+__pycache__
