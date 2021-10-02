@@ -4,14 +4,15 @@ import time
 import math
 import json
 
-user = "support@bb.vision"
-passw = "KLM2012a"
+
 
 class Disney:
     def __init__(self):
         self.base_url = "https://www.disneyplus.com/"
         self.movie_url = "https://www.disneyplus.com/movies"
         self.serie_url = "https://www.disneyplus.com/series"
+        self.user = "support@bb.vision"
+        self.passw = "KLM2012a"
     
     def scraping(self):
         driver = webdriver.Firefox()
@@ -20,10 +21,10 @@ class Disney:
         driver.implicitly_wait(100)
         form = driver.find_element_by_xpath('//*[@id="dssLogin"]')
         if form.find_element_by_xpath('//*[@id="email"]'):
-            form.find_element_by_xpath('//*[@id="email"]').send_keys(user)
+            form.find_element_by_xpath('//*[@id="email"]').send_keys(self.user)
             print("encontrado")
         driver.find_element_by_css_selector(".fESovW").click()
-        driver.find_element_by_css_selector("#password").send_keys(passw)
+        driver.find_element_by_css_selector("#password").send_keys(self.passw)
         time.sleep(2)
         driver.find_element_by_class_name("jSauOQ").click()
         driver.find_element_by_css_selector(".WvPzN").click()
@@ -94,7 +95,4 @@ class Disney:
         cats.append(cat)
 
         json_object = json.dumps(cats, indent = 4)
-
-        # Writing to sample.json
-        with open("json.json", "w") as outfile:
-            outfile.write(json_object)
+        return json_object
