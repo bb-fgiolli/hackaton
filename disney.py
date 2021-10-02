@@ -40,7 +40,7 @@ class Disney:
         cats = []
         category_title= collections[10].find_element_by_tag_name("h4").text
         contenidos = collections[10].find_elements_by_class_name("image-container")[:10]
-        cat = {"Plataforma":None, "Top":None, "Type":None}
+        cat = {"Pais":"AR","Plataforma":None, "Top":None, "Type":None}
         contenido_titles = []
         top = 0
         for contenido in contenidos:
@@ -53,7 +53,7 @@ class Disney:
         cats.append(cat)
         category_title= collections[24].find_element_by_tag_name("h4").text
         contenidos = collections[24].find_elements_by_class_name("image-container")[:10]
-        cat = {"Plataforma":None, "Top":None, "Type":None}
+        cat = {"Pais":"AR","Plataforma":None, "Top":None, "Type":None}
         contenido_titles = []
         top = 0
         for contenido in contenidos:
@@ -68,7 +68,7 @@ class Disney:
 
         driver.get(self.movie_url)
         contenidos = driver.find_elements_by_class_name("image-container")[0:10]
-        cat = {"Plataforma":None, "Top":None, "Type":None}
+        cat = {"Pais":"AR","Plataforma":None, "Top":None, "Type":None}
         contenido_titles = []
         top = 0
         for contenido in contenidos:
@@ -82,7 +82,7 @@ class Disney:
 
         driver.get(self.serie_url)
         contenidos = driver.find_elements_by_class_name("image-container")[0:10]
-        cat = {"Plataforma":None, "Top":None, "Type":None}
+        cat = {"Pais":"AR","Plataforma":None, "Top":None, "Type":None}
         contenido_titles = []
         top = 0
         for contenido in contenidos:
